@@ -11,6 +11,6 @@
 	last = log -1 HEAD
 [core]
 	editor = nvim
-	excludesFile = ~/.gitignore
+	excludesfile = ~/.gitignore
 [pull]
 	rebase = false
