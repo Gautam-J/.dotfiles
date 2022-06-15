@@ -5,6 +5,10 @@
 	defaultBranch = main
 [alias]
 	glog = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	ci = commit
+	br = branch
+	st = status
+	last = log -1 HEAD
 [core]
 	editor = nvim
 	excludesFile = ~/.gitignore
