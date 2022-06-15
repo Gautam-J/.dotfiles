@@ -2,10 +2,12 @@
 .env.local
 
 *.o
-*.pyc
+*.obj
+*.out
 
 .vscode/
 .next/
+.cache/
 .ipynb_checkpoints/
 __pycache__/
 node_modules/
