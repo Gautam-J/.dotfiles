@@ -150,24 +150,29 @@ alias findf="fd -tf -H"  # find file, including hidden
 alias evim="nvim ~/.config/nvim/init.vim"
 alias ezsh="nvim ~/.zshrc"
 
-# useful configs
+
+# shortforms
 alias cd..='cd ..'
 alias v='nvim'
 alias py='python'
-alias listenvs="conda info --envs"
-alias ports='netstat -tulanp'
-alias wget='wget -c'
-alias myip="curl http://ipecho.net/plain; echo"
-alias localip="ipconfig getifaddr en0"
-alias -g G='| grep'
-alias watchfile='tail -f'
-alias flash="sudo dd bs=4M status=progress oflag=sync"
 alias jpnb="jupyter notebook"
 alias caf="caffeinate -is &"
+alias -g G='| grep'
+
+# useful aliases
+alias wget='wget -c'  # continue previous download
+alias watchfile='tail -f'  # continuous update of file, eg. log files
+alias listenvs="conda info --envs"
+alias ports='netstat -tulanp'  # open ports
+alias myip="curl http://ipecho.net/plain; echo"  # public IP
+alias localip="ipconfig getifaddr en0"  # local IP
+alias flash="sudo dd bs=4M status=progress oflag=sync"
 
 # CP
 alias nt="cat > testCases"
+# files without source/rank
 alias cr="fd -tf -e .cpp -x awk 'NR==1&&/^$/{print FILENAME}' {} \;"
+# files without complexities mentioned
 alias stc="rg -F 'O()'"
 
 # Tmux
@@ -199,9 +204,9 @@ alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 export PATH="$PATH:/Users/gautam/Coding/flutter/bin"
 
 # environment variables
-export FZF_DEFAULT_COMMAND="fd --base-directory=$HOME"
+export FZF_DEFAULT_COMMAND="fd -a --base-directory=$HOME"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-export FZF_ALT_C_COMMAND="fd -td ."
+export FZF_ALT_C_COMMAND="fd -td -a . --base-directory=$HOME"
 
 # Ctrl+e to edit command in vim
 autoload edit-command-line; zle -N edit-command-line
