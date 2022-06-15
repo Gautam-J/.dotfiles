@@ -106,13 +106,12 @@ source $ZSH/oh-my-zsh.sh
 
 # ---------------------------CUSTOM CONFIGURATION------------------------------
 
-# custom function for cp
+# creates ./src/${1}.cpp file, with ./src/template.cpp as template
 function ncp () {
     if [ -f "src/${1}.cpp" ]; then
         echo "${1}.cpp file exists!" 1>&2
         return 1
     else
-        touch src/template.cpp
         cp src/template.cpp src/${1}.cpp
         nvim src/${1}.cpp
     fi
@@ -131,7 +130,7 @@ alias ld='ls -d .*'
 alias lld='ll -d .*'
 
 # preserve structure, prompt for confirmation, verbose
-alias cp="cp -aiv"
+alias cp="cp -Riv"
 alias mv="mv -iv"
 alias rm="rm -riv"
 alias mkdir="mkdir -pv"
@@ -148,9 +147,10 @@ alias findd="fd -td -H"  # find directory, including hidden
 alias findf="fd -tf -H"  # find file, including hidden
 
 # quick edits
-alias editvim="nvim ~/.config/nvim/init.vim"
-alias editzsh="nvim ~/.zshrc"
+alias evim="nvim ~/.config/nvim/init.vim"
+alias ezsh="nvim ~/.zshrc"
 
+# useful configs
 alias cd..='cd ..'
 alias v='nvim'
 alias py='python'
@@ -165,6 +165,11 @@ alias flash="sudo dd bs=4M status=progress oflag=sync"
 alias jpnb="jupyter notebook"
 alias caf="caffeinate -is &"
 
+# CP
+alias nt="cat > testCases"
+alias cr="fd -tf -e .cpp -x awk 'NR==1&&/^$/{print FILENAME}' {} \;"
+alias stc="rg -F 'O()'"
+
 # Tmux
 alias t='tmux'
 alias tk='tmux kill-server'
@@ -174,11 +179,6 @@ alias ta='tmux attach'
 alias tas='tmux attach -t'
 alias tls='tmux ls'
 alias tnw='tmux neww -n'
-
-# CP
-alias nt="cat > testCases"
-alias cr="find . -name '*.cpp' -exec awk 'NR==1&&/^$/{print FILENAME}' {} \;"
-alias stc="rg -F 'O()'"
 
 # Git
 alias g="git"
