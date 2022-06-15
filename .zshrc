@@ -124,9 +124,15 @@ bindkey '^e' edit-command-line
 
 # Useful aliases
 alias grep='grep --colour=auto'
-# alias diff='diff --color=auto'
-alias ls='ls -lFh --color=auto'
-alias ls.='ls -d .*'
+alias diff='colordiff'
+
+alias ls='ls -G'
+alias ll="ls -lh"
+alias la='ls -A'
+alias lla='ll -A'
+alias ld='ls -d .*'
+alias lld='ll -d .*'
+
 alias cp="cp -aiv"
 alias cd..='cd ..'
 alias mv="mv -iv"
@@ -136,8 +142,8 @@ alias df='df -h'
 alias du="du -h"
 alias dud="du -d 1"
 alias ducd="du -s"
-# alias fd="find . -type d -name"
-alias ff="find . -type f -name"
+alias findd="find . -type d -name"
+alias findf="find . -type f -name"
 alias v='nvim'
 alias py='python'
 alias editvim="nvim ~/.config/nvim/init.vim"
