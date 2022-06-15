@@ -1,0 +1,11 @@
+.DS_Store
+.env.local
+
+*.o
+*.pyc
+
+.vscode/
+.next/
+.ipynb_checkpoints/
+__pycache__/
+node_modules/
