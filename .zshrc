@@ -118,14 +118,11 @@ function ncp () {
     fi
 }
 
-# Ctrl+e to edit command in vim
-autoload edit-command-line; zle -N edit-command-line
-bindkey '^e' edit-command-line
-
-# Useful aliases
+# Show color output
 alias grep='grep --colour=auto'
 alias diff='colordiff'
 
+# listing files, long format, (only) hidden files
 alias ls='ls -G'
 alias ll="ls -lh"
 alias la='ls -A'
@@ -133,21 +130,30 @@ alias lla='ll -A'
 alias ld='ls -d .*'
 alias lld='ll -d .*'
 
+# preserve structure, prompt for confirmation, verbose
 alias cp="cp -aiv"
-alias cd..='cd ..'
 alias mv="mv -iv"
 alias rm="rm -riv"
 alias mkdir="mkdir -pv"
+
+# human readable form
 alias df='df -h'
 alias du="du -h"
-alias dud="du -d 1"
-alias ducd="du -s"
-alias findd="find . -type d -name"
-alias findf="find . -type f -name"
-alias v='nvim'
-alias py='python'
+
+alias dud="du -d 1"  # display only directory disk usage
+alias ducd="du -s"  # display disk usage of working directory
+
+# fd is much faster than find, thanks to rust
+alias findd="fd -td -H"  # find directory, including hidden
+alias findf="fd -tf -H"  # find file, including hidden
+
+# quick edits
 alias editvim="nvim ~/.config/nvim/init.vim"
 alias editzsh="nvim ~/.zshrc"
+
+alias cd..='cd ..'
+alias v='nvim'
+alias py='python'
 alias listenvs="conda info --envs"
 alias ports='netstat -tulanp'
 alias wget='wget -c'
@@ -192,10 +198,14 @@ alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 # Add to path
 export PATH="$PATH:/Users/gautam/Coding/flutter/bin"
 
-# env variables
-export FZF_DEFAULT_COMMAND="fd"
+# environment variables
+export FZF_DEFAULT_COMMAND="fd --base-directory=$HOME"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-export FZF_ALT_C_COMMAND="fd -t d ."
+export FZF_ALT_C_COMMAND="fd -td ."
+
+# Ctrl+e to edit command in vim
+autoload edit-command-line; zle -N edit-command-line
+bindkey '^e' edit-command-line
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
