@@ -117,6 +117,12 @@ function ncp () {
     fi
 }
 
+# create directory and cd into it
+function mkcd () {
+    mkdir ${1} && cd ${1};
+    echo "Current Directory: $(pwd)"
+}
+
 # Show color output
 alias grep='grep --colour=auto'
 alias diff='colordiff'
