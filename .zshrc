@@ -168,11 +168,12 @@ alias -g G='| grep'
 # useful aliases
 alias wget='wget -c'  # continue previous download
 alias watchfile='tail -f'  # continuous update of file, eg. log files
-alias listenvs="conda info --envs"
+alias cenv="conda info --envs"
 alias ports='netstat -tulanp'  # open ports
 alias myip="curl http://ipecho.net/plain; echo"  # public IP
 alias localip="ipconfig getifaddr en0"  # local IP
 alias flash="sudo dd bs=4M status=progress oflag=sync"
+alias time="/usr/bin/time -p"  # print in separate line
 
 # CP
 alias nt="cat > testCases"
