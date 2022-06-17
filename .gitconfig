@@ -9,6 +9,7 @@
 	br = branch
 	st = status
 	last = log -1 HEAD
+	co = checkout
 [core]
 	editor = nvim
 	excludesfile = ~/.gitignore

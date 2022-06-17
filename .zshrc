@@ -194,17 +194,18 @@ alias tnw='tmux neww -n'
 
 # Git
 alias g="git"
-alias glog="git glog"
-alias gss="git status"
+alias gl="git glog"
+alias gst="git status"
 alias ga="git add"
 alias gaa="git add -A"
-alias gc="git commit -v"
+alias gci="git commit -v"
 alias gp="git push"
 alias gpl="git pull"
 alias gcl='git clone'
 alias gini="git init"
 alias gdif="git diff --minimal"
 alias gsw="git switch"
+alias gco="git checkout"
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
 # Add to path
