@@ -338,10 +338,10 @@ autocmd Filetype css setlocal tabstop=2 shiftwidth=2 softtabstop=2
 
 autocmd BufWritePre * :call TrimWhitespace()
 
-" TODO: Check this with other configs
-autocmd BufWritePre *.js lua vim.lsp.buf.formatting_sync(nil, 100)
-autocmd BufWritePre *.jsx lua vim.lsp.buf.formatting_sync(nil, 100)
-autocmd BufWritePre *.py lua vim.lsp.buf.formatting_sync(nil, 100)
+" code autoformat
+autocmd BufWritePre *.js lua vim.lsp.buf.formatting_sync(nil, 1000)
+autocmd BufWritePre *.jsx lua vim.lsp.buf.formatting_sync(nil, 1000)
+autocmd BufWritePre *.py lua vim.lsp.buf.formatting_sync(nil, 1000)
 
 augroup AutoDeleteNetrwHiddenBuffers
   au!
