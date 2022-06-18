@@ -232,11 +232,11 @@ require('telescope').load_extension('fzy_native')
 EOF
 
 " LSP configs
-nnoremap <silent> ld <cmd>lua vim.lsp.buf.definition()<CR>
-nnoremap <silent> lr <cmd>lua vim.lsp.buf.references()<CR>
-nnoremap <silent> li <cmd>lua vim.lsp.buf.implementation()<CR>
+nnoremap <silent> gd <cmd>lua vim.lsp.buf.definition()<CR>
+nnoremap <silent> gr <cmd>lua vim.lsp.buf.references()<CR>
+nnoremap <silent> gi <cmd>lua vim.lsp.buf.implementation()<CR>
 nnoremap <silent> <leader>K <cmd>lua vim.lsp.buf.hover()<CR>
-nnoremap <silent> ls <cmd>lua vim.lsp.buf.signature_help()<CR>
+nnoremap <silent> gs <cmd>lua vim.lsp.buf.signature_help()<CR>
 nnoremap <leader>vn <cmd>lua vim.diagnostic.goto_next()<CR>
 nnoremap <leader>vca <cmd>lua vim.lsp.buf.code_action()<CR>
 
@@ -249,6 +249,7 @@ nnoremap <leader>pw :lua require('telescope.builtin').grep_string({ search = vim
 " telescope as list
 nnoremap <leader>pb :lua require('telescope.builtin').buffers()<CR>
 nnoremap <leader>vh :lua require('telescope.builtin').help_tags()<CR>
+nnoremap <leader>vd <cmd>lua require('telescope.builtin').diagnostics()<CR>
 
 " C-hjkl to switch focus between splits
 nnoremap <silent> <c-k> :wincmd k<CR>
