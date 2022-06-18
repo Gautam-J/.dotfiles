@@ -1,0 +1,2 @@
+/opt/homebrew/bin/blueutil -p 1
+echo "$(date): Bluetooth switched on" >> /Users/gautam/Scripts/bluetooth_toggle.log 2>&1
