@@ -163,7 +163,7 @@ alias v='nvim'
 alias py='python'
 alias jpnb="jupyter notebook"
 alias caf="caffeinate -is &"
-alias -g G='| grep'
+alias -g G='| rg'  # grep
 
 # useful aliases
 alias wget='wget -c'  # continue previous download
