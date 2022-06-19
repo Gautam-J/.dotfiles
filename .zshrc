@@ -220,6 +220,9 @@ export FZF_ALT_C_COMMAND="fd -td -a . --base-directory=$HOME"
 autoload edit-command-line; zle -N edit-command-line
 bindkey '^e' edit-command-line
 
+# Ctrl-f for tmux-sessionizer
+bindkey -s ^f "~/Scripts/tmux-sessionizer.sh\n"
+
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/Users/gautam/miniforge3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
