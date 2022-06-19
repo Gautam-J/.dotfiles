@@ -341,6 +341,7 @@ autocmd BufWritePre * :call TrimWhitespace()
 
 " code autoformat
 autocmd BufWritePre *.js lua vim.lsp.buf.formatting_sync(nil, 1000)
+autocmd BufWritePre *.ts lua vim.lsp.buf.formatting_sync(nil, 1000)
 autocmd BufWritePre *.jsx lua vim.lsp.buf.formatting_sync(nil, 1000)
 autocmd BufWritePre *.py lua vim.lsp.buf.formatting_sync(nil, 1000)
 
