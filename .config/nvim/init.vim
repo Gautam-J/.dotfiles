@@ -65,7 +65,7 @@ let g:airline#extensions#tabline#show_tab_type=0
 let g:airline#extensions#tabline#show_close_button = 0
 
 let g:netrw_liststyle=3  " tree like listing
-let g:netrw_browse_split=3  " open file in new tab
+let g:netrw_browse_split=4
 let g:netrw_banner=0  " hide banner
 
 set termguicolors
@@ -112,6 +112,7 @@ set wildignore+=**/__pycache__/*
 set completeopt=menu,menuone,noselect
 set inccommand=split
 set lazyredraw  " don't redraw while executing macros, performance gain
+set laststatus=3  " global status line
 
 lua require 'plug-colorizer'
 lua require 'nvim-treesitter.configs'.setup{ highlight = { enable = true } }
@@ -235,7 +236,7 @@ EOF
 nnoremap <silent> gd <cmd>lua vim.lsp.buf.definition()<CR>
 nnoremap <silent> gr <cmd>lua vim.lsp.buf.references()<CR>
 nnoremap <silent> gi <cmd>lua vim.lsp.buf.implementation()<CR>
-nnoremap <silent> <leader>K <cmd>lua vim.lsp.buf.hover()<CR>
+nnoremap <silent> K <cmd>lua vim.lsp.buf.hover()<CR>
 nnoremap <silent> gs <cmd>lua vim.lsp.buf.signature_help()<CR>
 nnoremap <leader>vn <cmd>lua vim.diagnostic.goto_next()<CR>
 nnoremap <leader>vca <cmd>lua vim.lsp.buf.code_action()<CR>
@@ -315,8 +316,8 @@ nnoremap <Right> :vertical resize -2<CR>
 nnoremap <Leader>rp :resize 100<CR>
 
 " create splits with same file
-nnoremap sz :split<CR>
-nnoremap sv :vsplit<CR>
+nnoremap sz :new<CR>
+nnoremap sv :vnew<CR>
 
 " Distraction free mode
 nnoremap <Leader>gy :Goyo<CR>
