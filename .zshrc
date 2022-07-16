@@ -130,10 +130,8 @@ alias diff='colordiff'
 # listing files, long format, (only) hidden files
 alias ls='ls -G'
 alias ll="ls -lh"
-alias la='ls -A'
-alias lla='ll -A'
-alias ld='ls -d .*'
-alias lld='ll -d .*'
+alias la='ll -A'
+alias ld='ll -d .*'
 
 # preserve structure, prompt for confirmation, verbose
 alias cp="cp -Riv"
