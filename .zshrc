@@ -113,7 +113,30 @@ function ncp () {
         return 1
     else
         cp src/template.cpp src/${1}.cpp
-        nvim src/${1}.cpp
+    fi
+}
+
+function newcont () {
+    ncp A
+    ncp B
+    ncp C
+}
+
+function clearcont () {
+    if [ -f "src/A.cpp" ]; then
+        rm -f "src/A.cpp"
+    fi
+    if [ -f "src/B.cpp" ]; then
+        rm -f "src/B.cpp"
+    fi
+    if [ -f "src/C.cpp" ]; then
+        rm -f "src/C.cpp"
+    fi
+}
+
+function mvcont () {
+    if [ -f "src/${1}.cpp" ]; then
+        mv src/${1}.cpp src/${2}.cpp
     fi
 }
 
