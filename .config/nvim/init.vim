@@ -351,6 +351,11 @@ autocmd BufWritePre * :call TrimWhitespace()
 " code autoformat
 autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue PrettierAsync
 
+augroup highlight_yank
+    autocmd!
+    au TextYankPost * silent! lua vim.highlight.on_yank { higroup='IncSearch', timeout=200 }
+augroup END
+
 augroup AutoDeleteNetrwHiddenBuffers
   au!
   au FileType netrw setlocal bufhidden=wipe
