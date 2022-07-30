@@ -60,11 +60,6 @@ let g:gruvbox_invert_selection='0'
 let g:airline_theme='gruvbox'
 let g:airline_powerline_fonts=1
 let g:airline#extensions#tabline#enabled=1
-let g:airline#extensions#tabline#show_buffers=0
-let g:airline#extensions#tabline#show_splits=0
-let g:airline#extensions#tabline#show_tab_nr=0
-let g:airline#extensions#tabline#show_tab_type=0
-let g:airline#extensions#tabline#show_close_button = 0
 
 let g:netrw_liststyle=3  " tree like listing
 let g:netrw_browse_split=4
@@ -102,7 +97,7 @@ set splitbelow
 set splitright
 set bg=dark
 set signcolumn=yes
-set shortmess+=c  " TODO: Check this function in other configs
+set shortmess+=c
 set conceallevel=0
 set path+=**
 set wildmode=longest,list,full
@@ -284,10 +279,10 @@ nnoremap <leader>h :h <C-R>=expand("<cword>")<CR><CR>
 " search for current cursor word
 nnoremap <leader>s /<C-R>=escape(expand("<cWORD>"), "/")<CR><CR>
 
-" Switch tabs
-nnoremap <TAB> :tabnext<CR>
-nnoremap <S-TAB> :tabprevious<CR>
-nnoremap <leader>t :tabnew<CR>
+" Buffers
+nnoremap <TAB> :bnext<CR>
+nnoremap <S-TAB> :bprevious<CR>
+nnoremap <leader>q :bdelete<CR>
 
 " persist current cipboard contents
 nnoremap <leader>d "_d
