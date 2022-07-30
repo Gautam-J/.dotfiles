@@ -231,6 +231,7 @@ alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
 # Add to path
 export PATH="$PATH:/Users/gautam/Coding/flutter/bin"
+export PATH="$PATH:/Users/gautam/Coding/ltex-ls-15.2.0/bin"
 
 # environment variables
 export FZF_DEFAULT_COMMAND="fd -a --base-directory=$HOME"
@@ -260,3 +261,8 @@ unset __conda_setup
 # <<< conda initialize <<<
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Ruby environment
+source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
+source /opt/homebrew/opt/chruby/share/chruby/auto.sh
+chruby ruby-3.1.2
