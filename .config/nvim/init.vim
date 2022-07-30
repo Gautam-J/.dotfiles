@@ -34,6 +34,8 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/playground'
 Plug 'dstein64/vim-startuptime'
 Plug 'wakatime/vim-wakatime'
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && npm install' }
+Plug 'prettier/vim-prettier', { 'do': 'npm install --frozen-lockfile --production' }
 
 " Initialize plugin system
 call plug#end()
@@ -205,12 +207,23 @@ lua <<EOF
     'tsserver',
     'tailwindcss',
     'jsonls',
-    'rust_analyzer'
+    'rust_analyzer',
+    'ltex',
   }
 
   for _, lsp in ipairs(servers) do
       lspconfig[lsp].setup{ capabilities=capabilities }
   end
+
+  lspconfig.ltex.setup{
+    settings = {
+      ltex = {
+        additionalRules = {
+          languageModel = '~/ngrams/',
+        },
+      },
+    },
+  }
 
 require('telescope').setup{
     defaults = {
@@ -341,10 +354,7 @@ autocmd Filetype css setlocal tabstop=2 shiftwidth=2 softtabstop=2
 autocmd BufWritePre * :call TrimWhitespace()
 
 " code autoformat
-autocmd BufWritePre *.js lua vim.lsp.buf.formatting_sync(nil, 1000)
-autocmd BufWritePre *.ts lua vim.lsp.buf.formatting_sync(nil, 1000)
-autocmd BufWritePre *.jsx lua vim.lsp.buf.formatting_sync(nil, 1000)
-autocmd BufWritePre *.py lua vim.lsp.buf.formatting_sync(nil, 1000)
+autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue PrettierAsync
 
 augroup AutoDeleteNetrwHiddenBuffers
   au!
