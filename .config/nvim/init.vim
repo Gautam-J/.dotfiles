@@ -12,7 +12,7 @@ Plug 'tpope/vim-commentary'
 Plug 'mbbill/undotree'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'morhetz/gruvbox'
+Plug 'sainnhe/gruvbox-material'
 Plug 'jiangmiao/auto-pairs'
 Plug 'Vimjas/vim-python-pep8-indent'
 Plug 'mhinz/vim-signify'
@@ -45,19 +45,14 @@ autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
   \| PlugInstall --sync | source $MYVIMRC
 \| endif
 
-colorscheme gruvbox
-syntax on
-highlight ColorColumn ctermbg=236
-filetype plugin on
-filetype indent on
-
 let mapleader=" "
 let g:python3_host_prog='/Users/gautam/miniforge3/bin/python'
 
-let g:gruvbox_contrast_dark='hard'
-let g:gruvbox_invert_selection='0'
+let g:gruvbox_material_background = 'hard'
+let g:gruvbox_material_foreground = 'material'
+let g:gruvbox_material_better_performance = 1
 
-let g:airline_theme='gruvbox'
+let g:airline_theme='gruvbox_material'
 let g:airline_powerline_fonts=1
 let g:airline#extensions#tabline#enabled=1
 
@@ -65,7 +60,12 @@ let g:netrw_liststyle=3  " tree like listing
 let g:netrw_browse_split=4
 let g:netrw_banner=0  " hide banner
 
-set termguicolors
+if (has("termguicolors"))
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+  set termguicolors
+endif
+
 set nowrap
 set clipboard+=unnamedplus
 set noshowmode  " dont show mode as we have airline
@@ -110,6 +110,12 @@ set completeopt=menu,menuone,noselect
 set inccommand=split
 set lazyredraw  " don't redraw while executing macros, performance gain
 set laststatus=3  " global status line
+
+colorscheme gruvbox-material
+syntax on
+highlight ColorColumn ctermbg=236
+filetype plugin on
+filetype indent on
 
 lua require 'plug-colorizer'
 lua require 'nvim-treesitter.configs'.setup{ highlight = { enable = true } }
