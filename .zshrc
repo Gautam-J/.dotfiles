@@ -195,6 +195,7 @@ alias myip="curl http://ipecho.net/plain; echo"  # public IP
 alias localip="ipconfig getifaddr en0"  # local IP
 alias flash="sudo dd bs=4M status=progress oflag=sync"
 alias time="/usr/bin/time -p"  # print in separate line
+alias rmdstore="find . -name ".DS_Store" -print -delete"
 
 # CP
 alias nt="cat > testCases"
@@ -237,6 +238,10 @@ export PATH="$PATH:/Users/gautam/Coding/ltex-ls-15.2.0/bin"
 export FZF_DEFAULT_COMMAND="fd -a --base-directory=$HOME"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_ALT_C_COMMAND="fd -td -a . --base-directory=$HOME"
+export TA_INCLUDE_PATH="$(brew --prefix ta-lib)/include"
+export TA_LIBRARY_PATH="$(brew --prefix ta-lib)/lib"
+export HDF5_DIR="/opt/homebrew/lib/"
+export BLOSC_DIR="/opt/local/"
 
 # Ctrl+e to edit command in vim
 autoload edit-command-line; zle -N edit-command-line
