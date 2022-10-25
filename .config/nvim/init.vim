@@ -110,6 +110,7 @@ set completeopt=menu,menuone,noselect
 set inccommand=split
 set lazyredraw  " don't redraw while executing macros, performance gain
 set laststatus=3  " global status line
+set cmdheight=0
 
 colorscheme gruvbox-material
 syntax on
