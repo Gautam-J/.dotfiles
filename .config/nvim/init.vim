@@ -197,7 +197,7 @@ lua <<EOF
 
   -- Setup lspconfig.
   local lspconfig = require('lspconfig')
-  local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+  local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
   local servers = {
     'pyright',
@@ -303,6 +303,10 @@ vnoremap <leader>p "_dP
 " next instance line in search result is placed in center
 nnoremap n nzzzv
 nnoremap N Nzzzv
+
+" places cursor at the middle while page up/down
+nnoremap <C-u> <C-u>zz
+nnoremap <C-d> <C-d>zz
 
 " persist selection after indentation
 vnoremap < <gv
