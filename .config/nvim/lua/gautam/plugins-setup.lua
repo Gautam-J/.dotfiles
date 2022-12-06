@@ -78,16 +78,8 @@ return packer.startup(function(use)
 
 	use("lewis6991/gitsigns.nvim")
 	use("tpope/vim-fugitive")
-	use("dstein64/vim-startuptime")
+
 	use("wakatime/vim-wakatime")
-	use({
-		"iamcco/markdown-preview.nvim",
-		run = "cd app && npm install",
-		setup = function()
-			vim.g.mkdp_filetypes = { "markdown" }
-		end,
-		ft = { "markdown" },
-	})
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
