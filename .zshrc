@@ -174,7 +174,7 @@ alias findd="fd -td -H"  # find directory, including hidden
 alias findf="fd -tf -H"  # find file, including hidden
 
 # quick edits
-alias ev="nvim ~/.config/nvim/init.vim"
+alias ev="cd ~/.config/nvim && nvim init.lua"
 alias ez="nvim ~/.zshrc"
 alias et="nvim ~/.config/tmux/tmux.conf"
 
