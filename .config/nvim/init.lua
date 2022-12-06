@@ -13,7 +13,6 @@ require("gautam.plugins.autopairs")
 require("gautam.plugins.gitsigns")
 require("gautam.plugins.treesitter")
 require("gautam.plugins.lsp.mason")
-require("gautam.plugins.lsp.lspsaga")
 require("gautam.plugins.lsp.lspconfig")
 require("gautam.plugins.lsp.null-ls")
 
