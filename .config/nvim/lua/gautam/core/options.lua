@@ -3,6 +3,8 @@ local opt = vim.opt
 vim.g.netwr_liststyle = 3
 vim.g.netrw_browse_split = 4
 vim.g.netrw_banner = 0
+vim.g.undotree_WindowLayout = 2
+vim.g.python3_host_prog = "/Users/gautam/miniforge3/bin/python"
 
 opt.number = true
 opt.relativenumber = true
@@ -52,7 +54,7 @@ opt.inccommand = "split"
 opt.lazyredraw = true
 opt.laststatus = 3
 
-vim.cmd([[ 
+vim.cmd([[
   augroup lang_indentation
     autocmd!
     autocmd Filetype javascript setlocal tabstop=2 shiftwidth=2 softtabstop=2

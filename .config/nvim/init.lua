@@ -15,5 +15,3 @@ require("gautam.plugins.treesitter")
 require("gautam.plugins.lsp.mason")
 require("gautam.plugins.lsp.lspconfig")
 require("gautam.plugins.lsp.null-ls")
-
-vim.g.python3_host_prog = "/Users/gautam/miniforge3/bin/python"

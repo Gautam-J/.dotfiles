@@ -26,6 +26,7 @@ nnoremap("<leader>-", "<C-x>")
 
 -- tree
 nnoremap("<leader>k", ":NvimTreeToggle<CR>")
+nnoremap("<leader>u", ":UndotreeToggle<CR>")
 
 -- telescope
 nnoremap("<C-p>", ":Telescope find_files<CR>")
