@@ -95,3 +95,25 @@ nnoremap("<Right>", ":vertical resize -2<CR>")
 nmap("<leader>gd", ":Gvdiffsplit<CR>", silent)
 nmap("<leader>gs", ":G<CR>")
 nnoremap("<leader>gc", ":Git commit<CR>")
+
+vim.api.nvim_create_autocmd({ "BufWritePre" }, {
+	pattern = { "*" },
+	command = [[%s/\s\+$//e]],
+})
+
+vim.cmd([[
+  augroup lang_build
+    autocmd!
+    autocmd filetype cpp nnoremap <leader>c :w<CR> :!nfn=$(echo % \| sed "s/src\///g" \| sed "s/.cpp//g") && g++ -std=c++17 -fsanitize=address -fsanitize=undefined -Wall -Wshadow -Wno-unused-result -D_GLIBCXX_DEBUG -O2 % -o ./bin/${nfn}<CR>
+    autocmd filetype cpp nnoremap <Leader>r :w <CR> :!nfn=$(echo % \| sed "s/src\///g" \| sed "s/.cpp//g") && ./bin/${nfn} < input > output<CR>
+    autocmd filetype c nnoremap <Leader>r :w <bar> exec '!gcc '.shellescape('%').' -o '.shellescape('%:r').' && ./'.shellescape('%:r')<CR>
+    autocmd filetype python nnoremap <Leader>r :w <bar> exec '!python '.shellescape('%')<CR>
+  augroup end
+]])
+
+vim.cmd([[
+  augroup highlight_yank
+    autocmd!
+    autocmd TextYankPost * silent! lua vim.highlight.on_yank { higroup='IncSearch', timeout=200 }
+  augroup end
+]])
