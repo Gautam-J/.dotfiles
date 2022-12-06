@@ -1,9 +1,10 @@
--- should be at top
+-- should be at top in order to setup the plugins first
 require("gautam.plugins-setup")
 
 require("gautam.core.options")
 require("gautam.core.keymaps")
 require("gautam.core.colorscheme")
+
 require("gautam.plugins.comment")
 require("gautam.plugins.nvim-tree")
 require("gautam.plugins.lualine")
