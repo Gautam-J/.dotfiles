@@ -1,11 +1,12 @@
 local status, lualine = pcall(require, "lualine")
 if not status then
-    return
+	return
 end
 
 -- by default, lualine's theme is auto
 lualine.setup({
-    options = {
-        theme = "gruvbox-material",
-    },
+	options = {
+		theme = "gruvbox-material",
+		globalstatus = true,
+	},
 })
