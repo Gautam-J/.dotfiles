@@ -10,6 +10,8 @@ treesitter.setup({
 	},
 	indent = {
 		enable = true,
+		-- indentation is not implemented properly for Python
+		disable = { "python" },
 	},
 	autotag = {
 		enable = true,
