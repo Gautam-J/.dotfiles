@@ -12,7 +12,7 @@ local nmap = bind("n", { noremap = false })
 local nnoremap = bind("n")
 local vnoremap = bind("v")
 -- local xnoremap = bind("x")
--- local inoremap = bind("i")
+local inoremap = bind("i")
 local silent = { silent = true }
 
 -- set leader key
@@ -41,6 +41,7 @@ nnoremap("<leader>rn", ":lua vim.lsp.buf.rename()<CR>", silent)
 nnoremap("<leader>ca", ":lua vim.lsp.buf.code_action()<CR>", silent)
 nnoremap("<leader>dl", ":lua vim.diagnostic.open_float()<CR>", silent)
 nnoremap("<leader>dn", ":lua vim.diagnostic.goto_next()<CR>", silent)
+inoremap("<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", silent)
 -- switch focus between split
 nnoremap("<C-h>", ":wincmd h<CR>")
 nnoremap("<C-j>", ":wincmd j<CR>")
