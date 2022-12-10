@@ -74,6 +74,8 @@ return packer.startup(function(use)
 	-- formatting and diagnostics
 	use("jose-elias-alvarez/null-ls.nvim")
 	use("jayp0521/mason-null-ls.nvim")
+	-- show color of hexcodes
+	use("norcalli/nvim-colorizer.lua")
 	-- nvim treesitter for better syntax highlighting
 	use({
 		"nvim-treesitter/nvim-treesitter",
