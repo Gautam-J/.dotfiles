@@ -11,7 +11,7 @@ end
 local nmap = bind("n", { noremap = false })
 local nnoremap = bind("n")
 local vnoremap = bind("v")
--- local xnoremap = bind("x")
+local xnoremap = bind("x")
 local inoremap = bind("i")
 local silent = { silent = true }
 
@@ -83,6 +83,12 @@ nnoremap("<Right>", ":vertical resize -2<CR>")
 nmap("<leader>gd", ":Gvdiffsplit<CR>", silent)
 nmap("<leader>gs", ":G<CR>")
 nnoremap("<leader>gc", ":Git commit<CR>")
+-- paste with persistence
+xnoremap("<leader>p", "_dP")
+-- prevent command history from showing up
+nnoremap("q:", "<nop>")
+-- prevent going into Ex mode
+nnoremap("Q", "<nop>")
 
 -- trim whitespace before saving the file
 vim.api.nvim_create_autocmd({ "BufWritePre" }, {
