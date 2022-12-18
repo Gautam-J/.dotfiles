@@ -116,13 +116,13 @@ function ncp () {
     fi
 }
 
-function newcont () {
+function touchcont () {
     ncp A
     ncp B
     ncp C
 }
 
-function clearcont () {
+function rmcont () {
     if [ -f "src/A.cpp" ]; then
         rm -f "src/A.cpp"
     fi
