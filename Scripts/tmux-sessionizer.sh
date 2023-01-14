@@ -10,6 +10,8 @@ if [[ -z $selected ]]; then
     exit 0
 fi
 
+suffix="/"
+selected=${selected/%$suffix}
 selected_name=$(basename "$selected" | tr . _)
 tmux_running=$(pgrep tmux)
 
