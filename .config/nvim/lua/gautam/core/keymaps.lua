@@ -42,6 +42,8 @@ nnoremap("<leader>ca", ":lua vim.lsp.buf.code_action()<CR>", silent)
 nnoremap("<leader>dl", ":lua vim.diagnostic.open_float()<CR>", silent)
 nnoremap("<leader>dn", ":lua vim.diagnostic.goto_next()<CR>", silent)
 inoremap("<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", silent)
+-- copilot
+inoremap("<C-j>", "<cmd>lua require('copilot').complete()<CR>", silent)
 -- switch focus between split
 nnoremap("<C-h>", ":wincmd h<CR>")
 nnoremap("<C-j>", ":wincmd j<CR>")
