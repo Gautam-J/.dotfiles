@@ -17,7 +17,7 @@ local servers = {
 	"html",
 	"tsserver",
 	"ltex",
-	"sumneko_lua",
+	"lua_ls",
 	"pyright",
 	"rust_analyzer",
 	"tailwindcss",
@@ -37,7 +37,7 @@ lspconfig.ltex.setup({
 	},
 })
 
-lspconfig.sumneko_lua.setup({
+lspconfig.lua_ls.setup({
 	settings = {
 		Lua = {
 			diagnostics = {
