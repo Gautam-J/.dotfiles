@@ -89,6 +89,8 @@ xnoremap("<leader>p", "_dP")
 nnoremap("q:", "<nop>")
 -- prevent going into Ex mode
 nnoremap("Q", "<nop>")
+-- select all text
+nnoremap("<leader>a", "ggVG")
 
 -- trim whitespace before saving the file
 vim.api.nvim_create_autocmd({ "BufWritePre" }, {
