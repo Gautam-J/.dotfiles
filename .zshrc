@@ -116,22 +116,31 @@ function ncp () {
     fi
 }
 
+function rcp () {
+    if [ -f "src/${1}.cpp" ]; then
+        rm -f "src/${1}.cpp"
+    else
+        echo "${1}.cpp file does not exist!" 1>&2
+        return 1
+    fi
+}
+
 function touchcont () {
     ncp A
     ncp B
     ncp C
+    ncp D
+    ncp E
+    ncp F
 }
 
 function rmcont () {
-    if [ -f "src/A.cpp" ]; then
-        rm -f "src/A.cpp"
-    fi
-    if [ -f "src/B.cpp" ]; then
-        rm -f "src/B.cpp"
-    fi
-    if [ -f "src/C.cpp" ]; then
-        rm -f "src/C.cpp"
-    fi
+    rcp A
+    rcp B
+    rcp C
+    rcp D
+    rcp E
+    rcp F
 }
 
 function mvcont () {
