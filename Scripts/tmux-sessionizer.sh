@@ -3,7 +3,7 @@
 if [[ $# -eq 1 ]]; then
     selected=$1
 else
-    selected=$(fd -td -a . ~/Coding ~/SecondBrain --min-depth=1 --max-depth=3 | fzf)
+    selected=$(fd -td -a . ~/SecondBrain --min-depth=1 --max-depth=4 | fzf)
 fi
 
 if [[ -z $selected ]]; then
