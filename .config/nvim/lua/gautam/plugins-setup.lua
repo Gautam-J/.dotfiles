@@ -61,7 +61,7 @@ return packer.startup(function(use)
 	use("hrsh7th/cmp-path")
 	use("hrsh7th/cmp-buffer")
 	-- Github Copilot
-	use("github/copilot.vim")
+	-- use("github/copilot.vim")
 	-- snippets
 	use("L3MON4D3/LuaSnip")
 	use("saadparwaiz1/cmp_luasnip")
