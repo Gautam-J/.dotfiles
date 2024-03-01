@@ -242,6 +242,7 @@ alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 # Add to path
 export PATH="$PATH:/Users/gautam/Coding/flutter/bin"
 export PATH="$PATH:/Users/gautam/Coding/ltex-ls-15.2.0/bin"
+export PATH="$PATH:/usr/local/mysql/bin/"
 
 # environment variables
 export FZF_DEFAULT_COMMAND="fd -a --base-directory=$HOME"
