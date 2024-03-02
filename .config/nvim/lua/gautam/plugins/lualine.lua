@@ -9,4 +9,14 @@ lualine.setup({
 		theme = "gruvbox-material",
 		globalstatus = true,
 	},
+	sections = {
+		lualine_b = {
+			"branch",
+			"diff",
+			{
+				"diagnostics",
+				symbols = { error = "E", warn = "W", info = "I", hint = "H" },
+			},
+		},
+	},
 })

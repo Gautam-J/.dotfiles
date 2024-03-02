@@ -12,7 +12,7 @@ null_ls.setup({
 		formatting.prettier,
 		formatting.stylua,
 		formatting.autopep8,
-		diagnostics.flake8,
+		-- diagnostics.flake8,
 		diagnostics.eslint_d,
 	},
 	on_attach = function(current_client, bufnr)

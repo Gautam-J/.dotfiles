@@ -45,7 +45,12 @@ return packer.startup(function(use)
 	-- tree for managing nvim's tree undo structure
 	use("mbbill/undotree")
 	-- bottom statusline
-	use("nvim-lualine/lualine.nvim")
+	use({
+		"nvim-lualine/lualine.nvim",
+		requires = {
+			"nvim-tree/nvim-web-devicons",
+		},
+	})
 	-- extn for fuzzy finder
 	use({
 		"nvim-telescope/telescope-fzf-native.nvim",
