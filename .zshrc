@@ -239,10 +239,14 @@ alias gsw="git switch"
 alias gco="git checkout"
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
+alias astart='/Users/gautam/atlas-home/apache-atlas-2.3.0/bin/atlas_start.py'
+alias astop='/Users/gautam/atlas-home/apache-atlas-2.3.0/bin/atlas_stop.py'
+
 # Add to path
 export PATH="$PATH:/Users/gautam/Coding/flutter/bin"
 export PATH="$PATH:/Users/gautam/Coding/ltex-ls-15.2.0/bin"
 export PATH="$PATH:/usr/local/mysql/bin/"
+export PATH="$PATH:/opt/homebrew/opt/openjdk@11/bin"
 
 # environment variables
 export FZF_DEFAULT_COMMAND="fd -a --base-directory=$HOME"
@@ -252,6 +256,18 @@ export TA_INCLUDE_PATH="$(brew --prefix ta-lib)/include"
 export TA_LIBRARY_PATH="$(brew --prefix ta-lib)/lib"
 export HDF5_DIR="/opt/homebrew/lib/"
 export BLOSC_DIR="/opt/local/"
+export HOMEBREW_NO_AUTO_UPDATE=1
+# export MAVEN_OPTS="-Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.allowall=true -Dmaven.wagon.http.ssl.ignore.validity.dates=true"
+
+export JAVA_HOME="/opt/homebrew/Cellar/openjdk@11/11.0.24"
+export SPARK_HOME="/Users/gautam/spark-home/spark-3.5.2-bin-hadoop3"
+
+export M2_HOME="/Users/gautam/SecondBrain/0Projects/apache_atlas/apache-maven-3.6.3"
+PATH="${M2_HOME}/bin:${PATH}"
+
+# apache atlas manage local hbase and solr
+export MANAGE_LOCAL_HBASE=true
+export MANAGE_LOCAL_SOLR=true
 
 # Ctrl+e to edit command in vim
 autoload edit-command-line; zle -N edit-command-line
