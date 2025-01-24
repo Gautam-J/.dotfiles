@@ -269,6 +269,8 @@ PATH="${M2_HOME}/bin:${PATH}"
 export MANAGE_LOCAL_HBASE=true
 export MANAGE_LOCAL_SOLR=true
 
+export MallocNanoZone='0'
+
 # Ctrl+e to edit command in vim
 autoload edit-command-line; zle -N edit-command-line
 bindkey '^e' edit-command-line
