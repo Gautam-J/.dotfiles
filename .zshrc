@@ -242,11 +242,16 @@ alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias astart='/Users/gautam/atlas-home/apache-atlas-2.3.0/bin/atlas_start.py'
 alias astop='/Users/gautam/atlas-home/apache-atlas-2.3.0/bin/atlas_stop.py'
 
+alias cyolo="claude --dangerously-skip-permissions"
+
 # Add to path
 export PATH="$PATH:/Users/gautam/Coding/flutter/bin"
 export PATH="$PATH:/Users/gautam/Coding/ltex-ls-15.2.0/bin"
 export PATH="$PATH:/usr/local/mysql/bin/"
 export PATH="$PATH:/opt/homebrew/opt/openjdk@11/bin"
+export PATH="$PATH:/usr/local/go/bin"
+export PATH="$PATH:$HOME/go/bin"
+export PATH="$PATH:/Users/gautam/.duckdb/cli/latest"
 
 # environment variables
 export FZF_DEFAULT_COMMAND="fd -a --base-directory=$HOME"
@@ -299,3 +304,24 @@ unset __conda_setup
 source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
 source /opt/homebrew/opt/chruby/share/chruby/auto.sh
 chruby ruby-3.1.2
+
+# opencode
+export PATH=/Users/gautam/.opencode/bin:$PATH
+
+. "$HOME/.local/bin/env"
+
+export PATH="$HOME/.local/bin:$PATH"
+
+# Claude Code Openrouter Setup
+# export OPENROUTER_API_KEY="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"
+# export ANTHROPIC_BASE_URL="https://openrouter.ai/api"
+# export ANTHROPIC_AUTH_TOKEN="$OPENROUTER_API_KEY"
+# export ANTHROPIC_API_KEY="" # Important: Must be explicitly empty
+# export ANTHROPIC_MODEL=deepseek/deepseek-v4-flash
+# export ANTHROPIC_DEFAULT_OPUS_MODEL=deepseek/deepseek-v4-pro
+# export ANTHROPIC_DEFAULT_SONNET_MODEL=deepseek/deepseek-v4-flash
+# export ANTHROPIC_DEFAULT_HAIKU_MODEL=deepseek/deepseek-v4-flash
+# export CLAUDE_CODE_SUBAGENT_MODEL=deepseek/deepseek-v4-flash
+# export CLAUDE_CODE_EFFORT_LEVEL="max"
+
+export HF_TOKEN="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"

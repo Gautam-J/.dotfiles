@@ -1,7 +1,7 @@
 local opt = vim.opt
 
 vim.g.undotree_WindowLayout = 2
-vim.g.python3_host_prog = "/Users/gautam/miniforge3/bin/python"
+vim.g.python3_host_prog = "/Users/gautam/miniconda3/bin/python"
 
 opt.number = true
 opt.relativenumber = true

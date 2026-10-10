@@ -21,6 +21,7 @@ local servers = {
 	"pyright",
 	"rust_analyzer",
 	"tailwindcss",
+	"gopls",
 }
 
 for _, lsp in ipairs(servers) do
@@ -43,6 +44,14 @@ lspconfig.lua_ls.setup({
 			diagnostics = {
 				globals = { "vim" },
 			},
+		},
+	},
+})
+
+lspconfig.pyright.setup({
+	settings = {
+		python = {
+			pythonPath = vim.fn.exepath("python3"),
 		},
 	},
 })
